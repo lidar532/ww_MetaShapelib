@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "ww_MetaShapelib"
+  site-url: "https://lidar532.github.io/ww_MetaShapelib"
+  description: "A Python library for reading and analysing MetaShape reference and camera calibration files."
+  repo-branch: main
+  repo-url: "https://github.com/lidar532/ww_MetaShapelib"

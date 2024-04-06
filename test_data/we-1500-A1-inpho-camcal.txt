@@ -1,0 +1,21 @@
+$CAMERA
+  $TYPE : Distagon_2/28_ZF.2_(36.4mm)
+  $DATE : 15:38:11 04/04/2024
+  $BRAND : Custom
+  $KIND : CCDFrame
+  $CCD_INTERIOR_ORIENTATION :
+     181.818       -0    2459.25
+       0.0000000000    -181.818    1622.81
+  $CCD_COLUMNS : 4896
+  $CCD_ROWS : 3264
+  $PIXEL_REFERENCE : CenterTopLeft
+  $FOCAL_LENGTH :    28.752
+  $PRINCIPAL_POINT_PPA :     0.000000     0.000000
+  $DISTORTION_TYPE :  Polynomial
+  $RADIAL_COEFFS :
+                      0             -0.000113936                  1.29005e-07                  8.38545e-11
+                      -1.3132e-13                  0                  0                  0
+  $DECENTRE_COEFFS :
+                      -9.59144e-06                  1.31488e-05                  0                  0
+  $GPS_ANTENNA_OFFSET :     0.000000     0.000000     0.000000
+  $CAMERA_MOUNT_ROTATION :     0.000000
