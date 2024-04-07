@@ -8,7 +8,7 @@ __all__ = ['asof', 'MetaShapeReference', 'read_metashape_reference_file_into_dat
 
 # %% ../nbs/ww_MetaShapelib.ipynb 3
 import datetime as              dt
-import pandas   as              pd
+#import pandas   as              pd
 import csv
 import numpy    as              np
 from   glob    import           glob
