@@ -17,7 +17,7 @@ from pathlib import             Path, PurePosixPath, PureWindowsPath
 import xml.etree.ElementTree as ET
 
 # %% ../nbs/ww_MetaShapelib.ipynb 4
-import pandas   as              pd
+import pandas as pd
 
 # %% ../nbs/ww_MetaShapelib.ipynb 5
 import numpy    as              np
