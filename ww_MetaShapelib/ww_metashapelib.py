@@ -15,16 +15,18 @@ import os
 from   io    import             StringIO
 from pathlib import             Path, PurePosixPath, PureWindowsPath
 import xml.etree.ElementTree as ET
-import numpy    as              np
 
 # %% ../nbs/ww_MetaShapelib.ipynb 4
 import pandas   as              pd
 
-# %% ../nbs/ww_MetaShapelib.ipynb 7
+# %% ../nbs/ww_MetaShapelib.ipynb 5
+import numpy    as              np
+
+# %% ../nbs/ww_MetaShapelib.ipynb 8
 # The asof data for this version of the library.
 asof = '2024-0407-0052'
 
-# %% ../nbs/ww_MetaShapelib.ipynb 20
+# %% ../nbs/ww_MetaShapelib.ipynb 21
 class MetaShapeReference:
   """
   This class holds data extracted from a MetaShape reference file.
@@ -38,7 +40,7 @@ class MetaShapeReference:
     self.total_error:obj   = None      # A class popuated with the data extracted from the `Total Error` line.
     self.data:list         = None      # A list of all lines (strings) extracted from the file.
 
-# %% ../nbs/ww_MetaShapelib.ipynb 22
+# %% ../nbs/ww_MetaShapelib.ipynb 23
 def read_metashape_reference_file_into_dataframe(
     filename           # Metashape reference filename to read.
     ) -> pd.DataFrame: # MetashapeReference class data structure.
@@ -85,7 +87,7 @@ def read_metashape_reference_file_into_dataframe(
   # Return the data structure.
   return ref
 
-# %% ../nbs/ww_MetaShapelib.ipynb 28
+# %% ../nbs/ww_MetaShapelib.ipynb 29
 def read_metashape_reference_file_total_errors( 
     filename:str   # Filename of a MetaShape reference file. 
 ) ->object:        # Pandas dataframe containing the entries from the `Total Error` line  in the file.
@@ -98,7 +100,7 @@ def read_metashape_reference_file_total_errors(
   df.total_error['datetime'] = dtime
   return df.total_error
 
-# %% ../nbs/ww_MetaShapelib.ipynb 33
+# %% ../nbs/ww_MetaShapelib.ipynb 34
 class MetaShape_ref_total_errors:
   """
   This class is populated with the `Total Error` values from the Agisoft MetaShape reference export file.  It 
@@ -110,7 +112,7 @@ class MetaShape_ref_total_errors:
     self.path   = None
     self.df     = None
 
-# %% ../nbs/ww_MetaShapelib.ipynb 35
+# %% ../nbs/ww_MetaShapelib.ipynb 36
 def read_metashape_reference_dir_total_errors(
     dir_path:str,         # Path to MetaShape reference data files.
     mask:str='*-ref.txt'  # Mask to select the reference files.
@@ -132,7 +134,7 @@ def read_metashape_reference_dir_total_errors(
   rv.df = df
   return rv
 
-# %% ../nbs/ww_MetaShapelib.ipynb 41
+# %% ../nbs/ww_MetaShapelib.ipynb 42
 class MetaShape_Cal_Data():
   def __init__(self):
     self.filename   = None
@@ -147,7 +149,7 @@ class MetaShape_Cal_Data():
     self.height     = None
     self.error      = None
 
-# %% ../nbs/ww_MetaShapelib.ipynb 43
+# %% ../nbs/ww_MetaShapelib.ipynb 44
 def read_metashape_camera_cal_file(
     filename,              # The MetaShape xml calibration file to read.
     pixel_size  = 5.5e-6,  # Pixel size in meters.
@@ -215,7 +217,7 @@ def read_metashape_camera_cal_file(
     cd.error = f"Not a MetaShape calibration file, lacks <calibration> tag."
     return cd
 
-# %% ../nbs/ww_MetaShapelib.ipynb 54
+# %% ../nbs/ww_MetaShapelib.ipynb 55
 class read_openCV_camera_cal_file:
   """
   Read an OpenCV Camera xml Calibration file.
@@ -264,7 +266,7 @@ class read_openCV_camera_cal_file:
     self.metashape.p1           = self.Distortion_Coefficients_data[3]
     self.metashape.p2           = self.Distortion_Coefficients_data[2]
 
-# %% ../nbs/ww_MetaShapelib.ipynb 58
+# %% ../nbs/ww_MetaShapelib.ipynb 59
 def metashape_cal_to_tsai( df,               # MetaShape cal dataframe.
                           save=True,         # True to save tasi to a file.
                            tsai_file='',     # An optional filename to write the tsai data too.
