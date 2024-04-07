@@ -7,13 +7,13 @@ __all__ = ['asof', 'MetaShapeReference', 'read_metashape_reference_file_into_dat
            'read_openCV_camera_cal_file', 'metashape_cal_to_tsai']
 
 # %% ../nbs/ww_MetaShapelib.ipynb 3
-import datetime as              dt
-import pandas   as              pd
 import csv
-import numpy    as              np
-from   glob    import           glob
 import re
 import os
+import datetime as              dt
+import pandas   as              pd
+import numpy    as              np
+from   glob    import           glob
 from   io    import             StringIO
 from pathlib import             Path, PurePosixPath, PureWindowsPath
 import xml.etree.ElementTree as ET
