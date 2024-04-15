@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "ww_metashapelib.html",
+    "href": "ww_metashapelib.html",
+    "title": "ww_metashapelib",
+    "section": "",
+    "text": "Class instance attributes described in the table below are filled in by the read_metashape_reference_file_into_dataframe() function.\nTable generated with: Table generator\n\n\n\n\n\n\n\n\nAttribute\nType\nDescription\n\n\n\n\nfilename\nstr\nString containing the filename.\n\n\ndf\nDataFrame\nA pandas Dataframe containing the values extracted from the file.\n\n\nmeta\nDataFrame\nThe contents of the metadata extracted from the header of the file.\n\n\ntotal_error\nclass\nA class object containing the elements found in the Total Error line from the file.\n\n\ndata\nstr\nA copy of the entire string data read from the file.\n\n\n\n\nsource",
+    "crumbs": [
+      "ww_metashapelib"
+    ]
+  },
+  {
+    "objectID": "ww_metashapelib.html#references",
+    "href": "ww_metashapelib.html#references",
+    "title": "ww_metashapelib",
+    "section": "References",
+    "text": "References\n\nMedium Article: pathlib path(), PurePosixPath() and PureWindowsPath()\nnbdev directives. A cheat sheet of directives available in nbdev.",
+    "crumbs": [
+      "ww_metashapelib"
+    ]
+  },
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "source\n\nfoo\n\n foo ()\n\n\nfn = \"IOCAM1B_2019_GS_NASA_20190819_172719.4215.tif\"\n\n\nfn = \"IOCAM1B_2019_GS_NASA_20190819_172719.4215.tif\"\nfn, fn.replace(\"IOCAM1B_2019_GS_NASA_\", \"\").replace(\"_\",\"-\").replace(\".tif\", \".jpg\")\n\n('IOCAM1B_2019_GS_NASA_20190819_172719.4215.tif', '20190819-172719.4215.jpg')\n\n\n\nfn1 = \"20190819-172719.4215.tsai\"\nfn2 = \"20190819-172719_4215.tsai\"\nfn1.count('.'), fn2.count('.')\n\n(2, 1)\n\n\n\nnames = [\"20190819-172719.4215.tsai\",\n         \"20190819-172719_4215.tsai\",\n         \"20190819-172719_4215-tsai\"\n        ]\nfor fn in names:\n    if fn.count(\".\") &gt; 1:\n      print(f\"    too many: {fn}\")\n    elif fn.count('.') == 1:\n        print(f\"  just right: {fn}\")\n    else:\n        print(f\"WTF is this?: {fn}\")\n\n    too many: 20190819-172719.4215.tsai\n  just right: 20190819-172719_4215.tsai\nWTF is this?: 20190819-172719_4215-tsai\n\n\n\nfrom pathlib import Path\n\n\np.\n\n'20190819-172720.4216.jpg.final'\n\n\n\nfn = \"./cs_out/20190819-172720.4216.jpg.final.tsai\"\np = Path(fn)\n\n\nkeys = [\"cwd()\", \"drive\", \"exists()\", \"expanduser()\", \"is_dir()\",\n        \"is_file()\", \"name\", \"parts\", \"root\", \"stem\", \"suffix\",\n        \"parent\"\n       ]\nfor k in keys:\n    v = eval(f\"p.{k}\")\n    print(f\"{k:15} {v}\")\n\ncwd()           /home/wright/github-projects/ww_MetaShapelib/nbs\ndrive           \nexists()        False\nexpanduser()    cs_out/20190819-172720.4216.jpg.final.tsai\nis_dir()        False\nis_file()       False\nname            20190819-172720.4216.jpg.final.tsai\nparts           ('cs_out', '20190819-172720.4216.jpg.final.tsai')\nroot            \nstem            20190819-172720.4216.jpg.final\nsuffix          .tsai\nparent          cs_out",
+    "crumbs": [
+      "core"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Readme",
+    "section": "",
+    "text": "The documentaion for this library is located here: ww_MetaShapelib",
+    "crumbs": [
+      "Readme"
+    ]
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "Readme",
+    "section": "Install",
+    "text": "Install\npip install -e .",
+    "crumbs": [
+      "Readme"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "Readme",
+    "section": "How to use",
+    "text": "How to use\nExample usage:\n\nimport ww_MetaShapelib.ww_metashapelib as ms\n\n\nms.asof\n\n'2024-0407-0052'\n\n\n\ntest_data_dir = '../test_data/'\nrv = ms.read_metashape_reference_dir_total_errors( test_data_dir )\ndisplay(rv.path, rv.df)\n\n'../test_data/'\n\n\n\n\n\n\n\n\n\n\nLabel\ndatetime\nError_(m)\nX_error\nY_error\nZ_error\nError_(deg)\nYaw_error\nPitch_error\nRoll_error\n\n\n\n\n0\nns1500-ref.txt\n2019-08-19 17:21:36\n0.042235\n0.027437\n0.026548\n0.018061\n0.700134\n0.459896\n0.520026\n0.090862\n\n\n1\new1500-ref.txt\n2019-08-19 17:32:33\n0.053197\n0.040021\n0.030392\n0.017453\n0.666923\n0.444327\n0.478524\n0.135554\n\n\n2\new2000-ref.txt\n2019-08-19 17:08:47\n0.054781\n0.033468\n0.039589\n0.017709\n0.647979\n0.459748\n0.436593\n0.133774\n\n\n3\new1200-ref.txt\n2019-08-19 16:56:31\n0.230996\n0.041630\n0.128267\n0.187547\n0.639768\n0.439518\n0.450201\n0.115958",
+    "crumbs": [
+      "Readme"
+    ]
+  }
+]
